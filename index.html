@@ -8,30 +8,66 @@
     <link rel="stylesheet" href="css\style.css">
 </head>
 <body>
-    <header style="text-align: center;">
+    <header>
         <h1>Kalkulator BMI</h1>
     </header>
     <section>
-        <article>Alat untuk mengukur bla bla bla bla</article>
-        <form>
+        <div>
+            <h2>Hitung BMI Anda</h2>
+            <p>Isi form berikut untuk menghitung Indeks Massa Tubuh (BMI) Anda.</p>
+        </div>
+        <form id="form" class="form" aria-label="Kalkulator BMI">
             <div>
-                <label for ="berat-badan">Berat Badan (kg)</label>
+                <label class="form-label" for="gender">Jenis Kelamin</label>
+                <div class="input-group">
+                    <input type="radio" name="gender" id="laki-laki" value="laki-laki" class="form-input-check" checked>
+                    <label for="laki-laki">Pria</label>
+                    <input type="radio" name="gender" id="perempuan" value="perempuan" class="form-input-check">
+                    <label for="perempuan">Wanita</label>
+                </div>
+            <div class="inputbox">
+                <label for ="berat-badan">Berat Badan (Kg)</label>
                 <input type ="" id ="berat-badan">
             </div>
-            <div>
-                <label for ="tinggi-badan">tinggi Badan (kg)</label>
+            <div class="inputbox">
+                <label for ="tinggi-badan">Tinggi Badan (Cm)</label>
                 <input type ="" id ="tinggi-badan">
-            </div>
-            <div>
-                <label for ="usia-badan">usia Badan (kg)</label>
+            </div>              
+            <div class="inputbox">
+                <label for ="usia-badan">Usia Badan (Umur)</label>
                 <input type ="" id ="usia-badan">
             </div>
-            <button>Hitung BMI</button>
-            <button>Reset</button>
+            <div>
+                <button type="button" class="btn" onclick="checkBMI()">Hitung BMI</button>
+                <button type="reset" class="btn btn-reset" onclick="regenerateBMI()">Reset</button>
+            </div>
         </form>
     </section>
-    <section>
-        
-    </section>
+    <section id="result" class="container d-hidden">
+        <h2 class="title">Hasil</h2>
+        <div class="sub-container mb-1">
+          <h3 id="result-title" class="result-title"></h3>
+          <div id="result-bmi" class="result-bmi"></div>
+          <p id="result-desc" class="result-desc"></p>
+        </div>
+        <div class="mb-1 paragraph">
+          <p id="result-text"></p>
+          <p id="suggestion-text"></p>
+          <p id="advice-text"></p>
+          <p>
+            BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang, Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.
+          </p>
+        </div>
+        <div class="sub-container paragraph">
+          <h6 id="risk-title"></h6>
+          <ul id="list-risk" class="list-risk"></ul>
+        </div>
+      </section>
+    <footer>
+        @ Cahya Atma Wijaya
+    </footer>
+    <script src="js\script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
